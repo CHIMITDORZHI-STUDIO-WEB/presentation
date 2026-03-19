@@ -84,7 +84,7 @@ nav{
 .h2{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3.5vw,44px);font-weight:900;line-height:1.1}
 .h3{font-family:'Unbounded',sans-serif;font-size:clamp(14px,1.6vw,18px);font-weight:700;line-height:1.3}
 .accent{color:var(--accent2)}
-.desc{font-size:16px;color:var(--muted);line-height:1.75;max-width:580px;margin-top:16px}
+.desc{font-size:16px;color:var(--muted);line-height:1.75;max-width:700px;margin-top:16px}
 
 /* ── SLIDE 1 ── HERO */
 #s1{
@@ -93,6 +93,16 @@ nav{
     radial-gradient(ellipse 50% 50% at 85% 20%,rgba(0,206,201,.05),transparent),
     var(--bg);
   align-items:flex-start;
+}
+.hero-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;max-width:1200px}
+.hero-photo{
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-photo img{
+  width:100%;max-width:420px;border-radius:24px;
+  border:2px solid var(--border);
+  box-shadow:0 32px 80px rgba(108,92,231,.18);
+  object-fit:cover;
 }
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:10px;
@@ -124,7 +134,7 @@ nav{
 .btn svg{width:16px;height:16px;flex-shrink:0}
 
 /* ── SLIDE 2 ── ABOUT */
-.about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin-top:36px}
+.about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1100px;margin-top:36px}
 .about-card{
   background:var(--card);border:1px solid var(--border2);
   border-radius:18px;padding:28px;
@@ -141,7 +151,7 @@ nav{
 .about-card p{font-size:13px;color:var(--muted);line-height:1.65}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .tag{background:rgba(108,92,231,.1);color:var(--accent2);border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700}
-.certs-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;max-width:900px}
+.certs-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;max-width:1100px}
 .cert{
   background:var(--card2);border:1px solid var(--border2);
   border-radius:12px;padding:14px 20px;
@@ -151,7 +161,7 @@ nav{
 .cert span{font-size:13px;color:var(--muted)}
 
 /* ── SLIDE 3 ── PROBLEMS */
-.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin-top:36px}
+.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin-top:36px}
 .prob-card{
   background:var(--card);border:1px solid rgba(225,112,85,.15);
   border-radius:18px;padding:28px;position:relative;overflow:hidden;
@@ -176,7 +186,7 @@ nav{
 }
 
 /* ── SLIDE 4 ── OVERVIEW */
-.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin-top:36px}
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin-top:36px}
 .ov-card{
   background:var(--card);border:1px solid var(--border2);
   border-radius:20px;padding:32px 26px;
@@ -198,7 +208,7 @@ nav{
 .ov-card h3{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px;line-height:1.4}
 .ov-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px}
 .ov-price{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:900;color:var(--accent2)}
-.guarantees{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1000px;margin-top:28px}
+.guarantees{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1200px;margin-top:28px}
 .guar{
   background:rgba(108,92,231,.06);border:1px solid var(--border);
   border-radius:12px;padding:16px 14px;text-align:center;
@@ -209,7 +219,7 @@ nav{
 .guar strong{color:var(--text)}
 
 /* ── SERVICE SLIDES ── */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1040px;margin-top:32px;align-items:start}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1200px;margin-top:32px;align-items:start}
 .svc-tag{
   display:inline-flex;align-items:center;gap:7px;
   background:rgba(108,92,231,.1);border:1px solid var(--border);
@@ -262,7 +272,7 @@ nav{
 .ex-box p strong{color:var(--text)}
 
 /* ── SLIDE 8 ── CASES */
-.cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:900px;margin-top:36px}
+.cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1100px;margin-top:36px}
 .case-card{
   background:var(--card);border:1px solid var(--border2);
   border-radius:20px;padding:30px;position:relative;overflow:hidden;
@@ -286,7 +296,7 @@ nav{
 .result-text{font-size:12px;color:var(--muted);line-height:1.5}
 
 /* ── SLIDE 9 ── TRUST + CTA */
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin-top:36px}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin-top:36px}
 .trust-card{
   background:var(--card);border:1px solid var(--border2);
   border-radius:16px;padding:26px;transition:border-color .25s,transform .25s;
@@ -304,7 +314,7 @@ nav{
 .cta-block{
   background:linear-gradient(135deg,rgba(108,92,231,.1),rgba(0,206,201,.05));
   border:1px solid var(--border);border-radius:24px;
-  padding:52px 60px;text-align:center;max-width:680px;width:100%;
+  padding:52px 60px;text-align:center;max-width:800px;width:100%;
 }
 .cta-block h2{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:900;margin-bottom:12px}
 .cta-block p{font-size:15px;color:var(--muted);margin-bottom:36px;line-height:1.65}
@@ -323,7 +333,9 @@ nav{
   .section{padding:90px 24px 60px}
   .divider{margin:0 24px}
   .about-grid,.problems-grid,.overview-grid,.guarantees,
-  .svc-grid,.cases-grid,.trust-grid{grid-template-columns:1fr}
+  .svc-grid,.cases-grid,.trust-grid,.hero-wrap{grid-template-columns:1fr}
+  .hero-photo{order:-1;margin-bottom:24px}
+  .hero-photo img{max-width:280px}
   nav{padding:0 20px}
   .nav-links{display:none}
   .hero-stats{gap:28px}
@@ -356,48 +368,56 @@ nav{
   <div class="blob" style="width:700px;height:700px;top:-200px;left:-150px;background:#6c5ce7"></div>
   <div class="blob" style="width:500px;height:500px;bottom:-100px;right:-100px;background:#00cec9"></div>
 
-  <div class="hero-eyebrow fi">
-    <span class="pulse-dot"></span>
-    Онлайн-старт за 24 часа · Работаем по всей России
-  </div>
+  <div class="hero-wrap">
+    <div>
+      <div class="hero-eyebrow fi">
+        <span class="pulse-dot"></span>
+        Онлайн-старт за 24 часа · Работаем по всей России
+      </div>
 
-  <h1 class="hero-title fi d1">
-    CHIMITDORZHI<br><span class="t2">STUDIO</span>
-  </h1>
+      <h1 class="hero-title fi d1">
+        CHIMITDORZHI<br><span class="t2">STUDIO</span>
+      </h1>
 
-  <p class="hero-sub fi d2">
-    Сайты, ИИ-боты и контент для бизнеса, который хочет расти.<br>
-    Без лишних слов — только результат.
-  </p>
+      <p class="hero-sub fi d2">
+        Сайты, ИИ-боты и контент для бизнеса, который хочет расти.<br>
+        Без лишних слов — только результат.
+      </p>
 
-  <div class="hero-stats fi d3">
-    <div class="stat-item">
-      <span class="stat-num">16+</span>
-      <span class="stat-label">лет в IT и AI</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">50+</span>
-      <span class="stat-label">мероприятий</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">3</span>
-      <span class="stat-label">готовых пакета</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">24ч</span>
-      <span class="stat-label">старт работы</span>
-    </div>
-  </div>
+      <div class="hero-stats fi d3">
+        <div class="stat-item">
+          <span class="stat-num">16+</span>
+          <span class="stat-label">лет в IT и AI</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">мероприятий</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label">готовых пакета</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">24ч</span>
+          <span class="stat-label">старт работы</span>
+        </div>
+      </div>
 
-  <div class="hero-actions fi d4">
-    <a href="https://t.me/yuliya_PR_marketing" target="_blank" class="btn btn-primary">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-      Написать в Telegram
-    </a>
-    <a href="https://chimitdorzhi.tech/market/" target="_blank" class="btn btn-ghost">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
-      Магазин услуг
-    </a>
+      <div class="hero-actions fi d4">
+        <a href="https://t.me/yuliya_PR_marketing" target="_blank" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Написать в Telegram
+        </a>
+        <a href="https://chimitdorzhi.tech/market/" target="_blank" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+          Магазин услуг
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-photo fi d3">
+      <img src="photo_2025-11-08_04-25-25.png" alt="Чимитдоржи Дарижапов — основатель CHIMITDORZHI STUDIO">
+    </div>
   </div>
 </section>
 <div class="divider"></div>
@@ -413,7 +433,7 @@ nav{
     02 / О студии
   </div>
   <h2 class="h2 fi d1">Эксперты, которым <span class="accent">доверяют результат</span></h2>
-  <p class="desc fi d2">Основатель студии — Чимитдоржи Дарижапов — работает в IT с 2008 года. За 16 лет: сотни проектов, международные мероприятия, сертификаты ведущих университетов мира и 1 000 000+ просмотров на YouTube.</p>
+  <p class="desc fi d2">Основатель студии — Чимитдоржи Дарижапов — в IT с 2008 года. За это время: сотни реализованных проектов, международные мероприятия, сертификаты ведущих университетов мира и 3 000 000+ просмотров в медиа.</p>
 
   <div class="about-grid fi d3">
     <div class="about-card">
@@ -421,7 +441,7 @@ nav{
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 8v4l3 3"/></svg>
       </div>
       <h3>AI и ИИ-автоматизация</h3>
-      <p>Создаём умных агентов на базе GPT, Claude, Gemini и DeepSeek. Интегрируемся с LangChain, RAG-системами и вашей CRM — так бизнес работает без выходных.</p>
+      <p>Создаём интеллектуальных агентов на базе GPT, Claude, Gemini и DeepSeek. Интегрируем с LangChain, RAG-системами и вашей CRM — чтобы бизнес работал без выходных.</p>
       <div class="tags"><span class="tag">LLM</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Python</span></div>
     </div>
     <div class="about-card">
@@ -429,7 +449,7 @@ nav{
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       </div>
       <h3>Веб и мобильные приложения</h3>
-      <p>Сайты, которые находят в поиске. Приложения, которыми пользуются. Разрабатываем под ключ: от дизайна до запуска на сервере.</p>
+      <p>Сайты, которые находят в поиске. Приложения, которые удобно использовать. Разрабатываем под ключ: от дизайна до запуска на сервере.</p>
       <div class="tags"><span class="tag">React</span><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">SEO</span></div>
     </div>
     <div class="about-card">
@@ -437,7 +457,7 @@ nav{
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
       </div>
       <h3>Контент и маркетинг</h3>
-      <p>Системный контент-маркетинг с использованием ИИ: тексты, видео, визуал и публикации. Вы занимаетесь бизнесом — соцсети работают сами.</p>
+      <p>Системный контент-маркетинг с помощью ИИ: тексты, видео, визуал и публикации. Вы занимаетесь бизнесом — соцсети ведутся сами.</p>
       <div class="tags"><span class="tag">SMM</span><span class="tag">AI-контент</span><span class="tag">AEO</span><span class="tag">GEO</span></div>
     </div>
     <div class="about-card">
@@ -445,7 +465,7 @@ nav{
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       </div>
       <h3>Event и медиа</h3>
-      <p>50+ конференций и турниров федерального уровня. Крипто Саммит РФ, BlockchainConferenceBaikal, МедиаБиз.рф. Умеем делать события, о которых говорят.</p>
+      <p>50+ конференций и турниров федерального уровня: Крипто Саммит РФ, BlockchainConferenceBaikal, МедиаБиз.рф. Делаем события, о которых говорят.</p>
       <div class="tags"><span class="tag">Конференции</span><span class="tag">Хакатоны</span><span class="tag">Стримы</span></div>
     </div>
   </div>
@@ -482,7 +502,7 @@ nav{
     03 / Боли клиентов
   </div>
   <h2 class="h2 fi d1">Это <span class="accent">знакомо?</span></h2>
-  <p class="desc fi d2">Большинство предпринимателей сталкиваются с одними и теми же барьерами. Мы знаем, как их убрать.</p>
+  <p class="desc fi d2">Большинство предпринимателей сталкиваются с одними и теми же проблемами. Мы точно знаем, как их решить.</p>
 
   <div class="problems-grid fi d3">
     <div class="prob-card">
@@ -536,7 +556,7 @@ nav{
     04 / Наши решения
   </div>
   <h2 class="h2 fi d1">Три пакета — <span class="accent">три результата</span></h2>
-  <p class="desc fi d2">Выбираете то, что закрывает вашу задачу. Оплачиваете онлайн — начинаем работу в течение 24 часов.</p>
+  <p class="desc fi d2">Выберите то, что решает вашу задачу. Оплатите онлайн — и мы начнём работу в течение 24 часов.</p>
 
   <div class="overview-grid fi d3">
     <div class="ov-card" onclick="go(5)">
@@ -544,7 +564,7 @@ nav{
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       </div>
       <h3>Сайт + SEO + Яндекс Директ</h3>
-      <p>Ваш бизнес в интернете за 3–5 дней. Сайт, который находят в поиске, реклама, которая приводит клиентов.</p>
+      <p>Ваш бизнес в интернете за 3–5 дней. Сайт, который находят в поиске, и реклама, которая приводит клиентов.</p>
       <div class="ov-price">25 000 ₽</div>
     </div>
     <div class="ov-card" onclick="go(6)">
@@ -560,7 +580,7 @@ nav{
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
       </div>
       <h3>Контент-завод</h3>
-      <p>Полный цикл производства контента. ИИ берёт на себя 80% рутины — вы только задаёте смысл.</p>
+      <p>Полный цикл производства контента. ИИ берёт на себя 80% рутины — вы задаёте направление.</p>
       <div class="ov-price">30 000 ₽</div>
     </div>
   </div>
@@ -609,9 +629,9 @@ nav{
       </p>
       <div class="svc-price">25 000 ₽</div>
       <div class="svc-price-note">единоразовая оплата · старт за 24 часа</div>
-      <a href="https://pay.alfabank.ru/sc/SizsuTDfNKSXZbVU" target="_blank" class="btn btn-primary" style="margin-top:4px">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        Оплатить онлайн
+      <a href="https://chimitdorzhi.tech/market/" target="_blank" class="btn btn-primary" style="margin-top:4px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+        Купить в магазине
       </a>
       <div class="bonus" style="display:flex;margin-top:16px">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
@@ -679,9 +699,9 @@ nav{
       </p>
       <div class="svc-price">25 000 ₽</div>
       <div class="svc-price-note">единоразовая оплата · старт за 24 часа</div>
-      <a href="https://pay.alfabank.ru/sc/XpcWpYSRkdbOzRaE" target="_blank" class="btn btn-primary" style="margin-top:4px">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        Оплатить онлайн
+      <a href="https://chimitdorzhi.tech/market/" target="_blank" class="btn btn-primary" style="margin-top:4px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+        Купить в магазине
       </a>
       <div class="bonus" style="display:flex;margin-top:16px">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
@@ -750,9 +770,9 @@ nav{
       </p>
       <div class="svc-price">30 000 ₽</div>
       <div class="svc-price-note">в месяц · старт за 24 часа</div>
-      <a href="https://pay.alfabank.ru/sc/WFzcjRbwksoLLikE" target="_blank" class="btn btn-primary" style="margin-top:4px">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        Оплатить онлайн
+      <a href="https://chimitdorzhi.tech/market/" target="_blank" class="btn btn-primary" style="margin-top:4px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+        Купить в магазине
       </a>
       <div class="bonus" style="display:flex;margin-top:16px">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
@@ -878,7 +898,7 @@ nav{
     09 / Почему мы
   </div>
   <h2 class="h2 fi d1">Работать с нами — <span class="accent">безопасно</span></h2>
-  <p class="desc fi d2">Понимаем: отдавать деньги незнакомой компании страшно. Поэтому сделали всё, чтобы вам было спокойно на каждом этапе.</p>
+  <p class="desc fi d2">Мы понимаем: доверить проект новой команде — ответственный шаг. Поэтому обеспечили прозрачность на каждом этапе.</p>
 
   <div class="trust-grid fi d3">
     <div class="trust-card">
@@ -928,7 +948,7 @@ nav{
   <div class="cta-wrap fi d4">
     <div class="cta-block">
       <h2>Готовы начать?</h2>
-      <p>Выберите услугу, оплатите онлайн —<br>и мы приступим к работе уже завтра</p>
+      <p>Напишите менеджеру или выберите услугу в магазине —<br>мы приступим к работе уже завтра</p>
       <div class="cta-btns">
         <a href="https://t.me/yuliya_PR_marketing" target="_blank" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
