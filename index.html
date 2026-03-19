@@ -329,6 +329,7 @@ nav{
 /* ── DIVIDER ── */
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0 80px}
 
+/* ── TABLET ── */
 @media(max-width:900px){
   .section{padding:90px 24px 60px}
   .divider{margin:0 24px}
@@ -339,6 +340,90 @@ nav{
   nav{padding:0 20px}
   .nav-links{display:none}
   .hero-stats{gap:28px}
+  .cta-block{padding:40px 32px}
+  .problems-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .guarantees{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:1fr}
+}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  .section{padding:80px 16px 48px}
+  .divider{margin:0 16px}
+  nav{padding:0 14px;height:52px}
+  .nav-logo{font-size:11px;letter-spacing:1px}
+  .nav-cta{padding:6px 16px;font-size:12px}
+
+  /* Hero */
+  .hero-title{font-size:clamp(28px,10vw,48px)}
+  .hero-sub{font-size:14px;margin:16px 0 28px}
+  .hero-eyebrow{font-size:10px;padding:6px 14px;letter-spacing:1px}
+  .hero-photo img{max-width:220px;border-radius:18px}
+  .hero-stats{gap:16px;margin-bottom:32px}
+  .stat-num{font-size:clamp(26px,8vw,40px)}
+  .stat-label{font-size:11px}
+  .hero-actions{flex-direction:column;gap:10px;width:100%}
+  .hero-actions .btn{width:100%;justify-content:center}
+
+  /* Headings */
+  .h2{font-size:clamp(20px,6vw,32px)}
+  .desc{font-size:14px;margin-top:12px}
+  .label{font-size:10px;padding:5px 12px;letter-spacing:1.5px}
+
+  /* Cards */
+  .about-grid,.overview-grid{gap:14px}
+  .about-card{padding:20px}
+  .ov-card{padding:24px 20px}
+  .ov-price{font-size:18px}
+  .ov-card h3{font-size:12px}
+  .ov-card p{font-size:12px;margin-bottom:14px}
+
+  /* Problems */
+  .prob-card{padding:20px}
+  .prob-card h3{font-size:14px}
+
+  /* Services */
+  .svc-grid{gap:28px}
+  .svc-price{font-size:32px}
+  .svc-price-note{font-size:12px}
+  .svc-tag{font-size:10px;padding:5px 12px}
+  .bonus{font-size:12px;padding:8px 12px}
+
+  /* Cases */
+  .case-card{padding:22px}
+  .case-card h3{font-size:14px}
+  .case-result{flex-direction:column;align-items:flex-start;gap:8px}
+  .result-num{font-size:24px}
+
+  /* Trust & CTA */
+  .trust-grid{gap:12px}
+  .trust-card{padding:20px}
+  .guarantees{grid-template-columns:1fr 1fr;gap:10px}
+  .guar{padding:12px 10px}
+  .guar p{font-size:11px}
+  .cta-block{padding:32px 20px;border-radius:18px}
+  .cta-block h2{font-size:clamp(18px,5vw,28px)}
+  .cta-block p{font-size:13px;margin-bottom:24px}
+  .cta-btns{flex-direction:column;gap:10px}
+  .cta-btns .btn{width:100%;justify-content:center}
+
+  /* Certs */
+  .certs-row{gap:8px}
+  .cert{padding:10px 14px}
+  .cert strong{font-size:10px}
+  .cert span{font-size:12px}
+}
+
+/* ── SMALL MOBILE ── */
+@media(max-width:380px){
+  .hero-title{font-size:28px}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .stat-num{font-size:26px}
+  .guarantees{grid-template-columns:1fr}
+  .hero-photo img{max-width:180px}
+  .svc-price{font-size:28px}
+  .nav-logo{font-size:10px}
 }
 </style>
 </head>
