@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHIMITDORZHI STUDIO — Презентация услуг</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #09090f;
+  --bg2:     #0f0f1a;
+  --card:    #13131e;
+  --card2:   #1a1a28;
+  --accent:  #6c5ce7;
+  --accent2: #a29bfe;
+  --cyan:    #00cec9;
+  --green:   #00b894;
+  --red:     #e17055;
+  --gold:    #fdcb6e;
+  --text:    #eeeef8;
+  --muted:   #7b7b9d;
+  --border:  rgba(108,92,231,.18);
+  --border2: rgba(255,255,255,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(9,9,15,.82);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border2);
+  padding:0 48px;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;color:var(--text)}
+.nav-logo span{color:var(--accent2)}
+.nav-links{display:flex;gap:4px}
+.nav-link{
+  width:28px;height:28px;border-radius:50%;
+  border:1px solid var(--border2);background:transparent;
+  cursor:pointer;transition:all .25s;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Manrope',sans-serif;font-size:10px;font-weight:700;color:var(--muted);
+}
+.nav-link:hover,.nav-link.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.nav-cta{
+  background:linear-gradient(135deg,var(--accent),#a29bfe);
+  color:#fff;text-decoration:none;
+  padding:8px 22px;border-radius:24px;
+  font-size:13px;font-weight:700;letter-spacing:.3px;
+  transition:all .25s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(108,92,231,.4)}
+
+/* ── SECTIONS ── */
+.section{
+  min-height:100vh;padding:100px 80px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.section-alt{background:var(--bg2)}
+
+/* ── GLOW BLOBS ── */
+.blob{
+  position:absolute;border-radius:50%;
+  filter:blur(120px);pointer-events:none;opacity:.07;
+}
+
+/* ── LABEL ── */
+.label{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--border);border-radius:30px;
+  padding:6px 16px;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--accent2);background:rgba(108,92,231,.08);
+  margin-bottom:22px;
+}
+.label svg{width:14px;height:14px;flex-shrink:0}
+
+/* ── HEADING ── */
+.h1{font-family:'Unbounded',sans-serif;font-size:clamp(32px,5.5vw,72px);font-weight:900;line-height:1.06}
+.h2{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3.5vw,44px);font-weight:900;line-height:1.1}
+.h3{font-family:'Unbounded',sans-serif;font-size:clamp(14px,1.6vw,18px);font-weight:700;line-height:1.3}
+.accent{color:var(--accent2)}
+.desc{font-size:16px;color:var(--muted);line-height:1.75;max-width:580px;margin-top:16px}
+
+/* ── SLIDE 1 ── HERO */
+#s1{
+  background:
+    radial-gradient(ellipse 60% 60% at 20% 50%,rgba(108,92,231,.07),transparent),
+    radial-gradient(ellipse 50% 50% at 85% 20%,rgba(0,206,201,.05),transparent),
+    var(--bg);
+  align-items:flex-start;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(108,92,231,.1);border:1px solid var(--border);
+  border-radius:40px;padding:8px 20px;
+  font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--accent2);margin-bottom:28px;
+}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pdot 2s infinite}
+@keyframes pdot{0%,100%{box-shadow:0 0 0 0 rgba(0,184,148,.5)}70%{box-shadow:0 0 0 8px rgba(0,184,148,0)}}
+.hero-title{font-family:'Unbounded',sans-serif;font-size:clamp(36px,6.5vw,84px);font-weight:900;line-height:1.03;margin-bottom:8px}
+.hero-title .t2{color:var(--accent2)}
+.hero-sub{font-size:clamp(14px,1.4vw,18px);color:var(--muted);line-height:1.7;max-width:520px;margin:20px 0 44px}
+.hero-stats{display:flex;gap:52px;flex-wrap:wrap;margin-bottom:48px}
+.stat-item{display:flex;flex-direction:column}
+.stat-num{font-family:'Unbounded',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:900;color:var(--accent2);line-height:1}
+.stat-label{font-size:12px;color:var(--muted);margin-top:6px;font-weight:500;letter-spacing:.3px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 30px;border-radius:40px;
+  font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;
+  text-decoration:none;transition:all .25s;cursor:pointer;border:none;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(108,92,231,.4)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent2)}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+
+/* ── SLIDE 2 ── ABOUT */
+.about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin-top:36px}
+.about-card{
+  background:var(--card);border:1px solid var(--border2);
+  border-radius:18px;padding:28px;
+  transition:border-color .25s,transform .25s;
+}
+.about-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.about-card-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:rgba(108,92,231,.12);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.about-card-icon svg{width:22px;height:22px;color:var(--accent2)}
+.about-card h3{font-weight:700;font-size:15px;margin-bottom:8px}
+.about-card p{font-size:13px;color:var(--muted);line-height:1.65}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{background:rgba(108,92,231,.1);color:var(--accent2);border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700}
+.certs-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;max-width:900px}
+.cert{
+  background:var(--card2);border:1px solid var(--border2);
+  border-radius:12px;padding:14px 20px;
+  display:flex;flex-direction:column;gap:3px;
+}
+.cert strong{font-size:11px;color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.cert span{font-size:13px;color:var(--muted)}
+
+/* ── SLIDE 3 ── PROBLEMS */
+.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin-top:36px}
+.prob-card{
+  background:var(--card);border:1px solid rgba(225,112,85,.15);
+  border-radius:18px;padding:28px;position:relative;overflow:hidden;
+}
+.prob-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),transparent)}
+.prob-icon{
+  width:48px;height:48px;border-radius:14px;
+  background:rgba(225,112,85,.08);border:1px solid rgba(225,112,85,.2);
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+}
+.prob-icon svg{width:24px;height:24px;color:var(--red)}
+.prob-card h3{font-weight:700;font-size:15px;margin-bottom:14px}
+.prob-list{list-style:none}
+.prob-list li{
+  font-size:13px;color:var(--muted);padding:7px 0 7px 22px;
+  border-bottom:1px solid var(--border2);position:relative;line-height:1.55;
+}
+.prob-list li:last-child{border-bottom:none}
+.prob-list li::before{
+  content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:10px;height:2px;background:var(--red);border-radius:2px;
+}
+
+/* ── SLIDE 4 ── OVERVIEW */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin-top:36px}
+.ov-card{
+  background:var(--card);border:1px solid var(--border2);
+  border-radius:20px;padding:32px 26px;
+  cursor:pointer;transition:all .3s;position:relative;overflow:hidden;text-align:left;
+}
+.ov-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(108,92,231,.06),transparent);
+  opacity:0;transition:.3s;
+}
+.ov-card:hover{transform:translateY(-6px);border-color:var(--accent)}
+.ov-card:hover::after{opacity:1}
+.ov-card-icon{
+  width:56px;height:56px;border-radius:16px;
+  background:rgba(108,92,231,.1);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.ov-card-icon svg{width:28px;height:28px;color:var(--accent2)}
+.ov-card h3{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px;line-height:1.4}
+.ov-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.ov-price{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:900;color:var(--accent2)}
+.guarantees{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1000px;margin-top:28px}
+.guar{
+  background:rgba(108,92,231,.06);border:1px solid var(--border);
+  border-radius:12px;padding:16px 14px;text-align:center;
+}
+.guar-icon{width:32px;height:32px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center}
+.guar-icon svg{width:24px;height:24px;color:var(--accent2)}
+.guar p{font-size:12px;color:var(--muted);line-height:1.5}
+.guar strong{color:var(--text)}
+
+/* ── SERVICE SLIDES ── */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1040px;margin-top:32px;align-items:start}
+.svc-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(108,92,231,.1);border:1px solid var(--border);
+  border-radius:20px;padding:6px 14px;margin-bottom:18px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent2);
+}
+.svc-tag svg{width:12px;height:12px}
+.svc-price{font-family:'Unbounded',sans-serif;font-size:44px;font-weight:900;color:var(--accent2);margin:22px 0 4px}
+.svc-price-note{font-size:13px;color:var(--muted);margin-bottom:22px}
+.bonus{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(253,203,110,.07);border:1px solid rgba(253,203,110,.2);
+  border-radius:10px;padding:10px 16px;margin-top:8px;
+  font-size:13px;color:var(--gold);font-weight:600;
+}
+.bonus svg{width:16px;height:16px;flex-shrink:0}
+.pain-box{
+  background:rgba(225,112,85,.05);border:1px solid rgba(225,112,85,.18);
+  border-radius:14px;padding:20px;margin-bottom:16px;
+}
+.box-title{
+  display:flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;
+}
+.box-title svg{width:14px;height:14px}
+.pain-box .box-title{color:var(--red)}
+.sol-box{
+  background:rgba(0,184,148,.05);border:1px solid rgba(0,184,148,.18);
+  border-radius:14px;padding:20px;margin-bottom:16px;
+}
+.sol-box .box-title{color:var(--green)}
+.ex-box{
+  background:var(--card2);border:1px solid var(--border2);
+  border-radius:14px;padding:20px;
+}
+.ex-box .box-title{color:var(--cyan)}
+.check-list{list-style:none}
+.check-list li{font-size:13px;color:var(--muted);padding:6px 0 6px 22px;position:relative;line-height:1.55;border-bottom:1px solid var(--border2)}
+.check-list li:last-child{border-bottom:none}
+.check-list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:10px;height:2px;background:var(--red);border-radius:2px}
+.sol-list{list-style:none}
+.sol-list li{font-size:13px;color:var(--muted);padding:6px 0 6px 22px;position:relative;line-height:1.55;border-bottom:1px solid var(--border2)}
+.sol-list li:last-child{border-bottom:none}
+.sol-list li::before{
+  content:'';position:absolute;left:2px;top:50%;transform:translateY(-50%);
+  width:8px;height:8px;border-radius:50%;
+  background:var(--green);
+}
+.ex-box p{font-size:14px;color:var(--muted);line-height:1.75}
+.ex-box p strong{color:var(--text)}
+
+/* ── SLIDE 8 ── CASES */
+.cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:900px;margin-top:36px}
+.case-card{
+  background:var(--card);border:1px solid var(--border2);
+  border-radius:20px;padding:30px;position:relative;overflow:hidden;
+}
+.case-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--cyan))}
+.case-label{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(108,92,231,.1);border:1px solid var(--border);
+  border-radius:20px;padding:4px 13px;margin-bottom:14px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent2);
+}
+.case-label svg{width:12px;height:12px}
+.case-card h3{font-weight:700;font-size:16px;margin-bottom:10px;line-height:1.35}
+.case-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.case-result{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(0,184,148,.05);border:1px solid rgba(0,184,148,.15);
+  border-radius:12px;padding:14px 16px;
+}
+.result-num{font-family:'Unbounded',sans-serif;font-size:30px;font-weight:900;color:var(--green);white-space:nowrap}
+.result-text{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* ── SLIDE 9 ── TRUST + CTA */
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin-top:36px}
+.trust-card{
+  background:var(--card);border:1px solid var(--border2);
+  border-radius:16px;padding:26px;transition:border-color .25s,transform .25s;
+}
+.trust-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.trust-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:rgba(108,92,231,.1);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.trust-icon svg{width:22px;height:22px;color:var(--accent2)}
+.trust-card h3{font-weight:700;font-size:15px;margin-bottom:8px}
+.trust-card p{font-size:13px;color:var(--muted);line-height:1.65}
+.cta-wrap{display:flex;justify-content:center;margin-top:48px}
+.cta-block{
+  background:linear-gradient(135deg,rgba(108,92,231,.1),rgba(0,206,201,.05));
+  border:1px solid var(--border);border-radius:24px;
+  padding:52px 60px;text-align:center;max-width:680px;width:100%;
+}
+.cta-block h2{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:900;margin-bottom:12px}
+.cta-block p{font-size:15px;color:var(--muted);margin-bottom:36px;line-height:1.65}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── FADE IN ── */
+.fi{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.fi.vis{opacity:1;transform:translateY(0)}
+.fi.d1{transition-delay:.08s}.fi.d2{transition-delay:.16s}.fi.d3{transition-delay:.24s}
+.fi.d4{transition-delay:.32s}.fi.d5{transition-delay:.40s}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0 80px}
+
+@media(max-width:900px){
+  .section{padding:90px 24px 60px}
+  .divider{margin:0 24px}
+  .about-grid,.problems-grid,.overview-grid,.guarantees,
+  .svc-grid,.cases-grid,.trust-grid{grid-template-columns:1fr}
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero-stats{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">CHIMITDORZHI<span>.</span></div>
+  <div class="nav-links">
+    <button class="nav-link active" onclick="go(1)">1</button>
+    <button class="nav-link" onclick="go(2)">2</button>
+    <button class="nav-link" onclick="go(3)">3</button>
+    <button class="nav-link" onclick="go(4)">4</button>
+    <button class="nav-link" onclick="go(5)">5</button>
+    <button class="nav-link" onclick="go(6)">6</button>
+    <button class="nav-link" onclick="go(7)">7</button>
+    <button class="nav-link" onclick="go(8)">8</button>
+    <button class="nav-link" onclick="go(9)">9</button>
+  </div>
+  <a href="https://t.me/yuliya_PR_marketing" target="_blank" class="nav-cta">Связаться</a>
+</nav>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 1 — ОБЛОЖКА
+════════════════════════════════════════ -->
+<section class="section" id="s1">
+  <div class="blob" style="width:700px;height:700px;top:-200px;left:-150px;background:#6c5ce7"></div>
+  <div class="blob" style="width:500px;height:500px;bottom:-100px;right:-100px;background:#00cec9"></div>
+
+  <div class="hero-eyebrow fi">
+    <span class="pulse-dot"></span>
+    Онлайн-старт за 24 часа · Работаем по всей России
+  </div>
+
+  <h1 class="hero-title fi d1">
+    CHIMITDORZHI<br><span class="t2">STUDIO</span>
+  </h1>
+
+  <p class="hero-sub fi d2">
+    Сайты, ИИ-боты и контент для бизнеса, который хочет расти.<br>
+    Без лишних слов — только результат.
+  </p>
+
+  <div class="hero-stats fi d3">
+    <div class="stat-item">
+      <span class="stat-num">16+</span>
+      <span class="stat-label">лет в IT и AI</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">50+</span>
+      <span class="stat-label">мероприятий</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3</span>
+      <span class="stat-label">готовых пакета</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">24ч</span>
+      <span class="stat-label">старт работы</span>
+    </div>
+  </div>
+
+  <div class="hero-actions fi d4">
+    <a href="https://t.me/yuliya_PR_marketing" target="_blank" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+      Написать в Telegram
+    </a>
+    <a href="https://chimitdorzhi.tech/market/" target="_blank" class="btn btn-ghost">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+      Магазин услуг
+    </a>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 2 — О СТУДИИ
+════════════════════════════════════════ -->
+<section class="section section-alt" id="s2">
+  <div class="blob" style="width:400px;height:400px;top:0;right:-100px;background:#6c5ce7"></div>
+
+  <div class="label fi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+    02 / О студии
+  </div>
+  <h2 class="h2 fi d1">Эксперты, которым <span class="accent">доверяют результат</span></h2>
+  <p class="desc fi d2">Основатель студии — Чимитдоржи Дарижапов — работает в IT с 2008 года. За 16 лет: сотни проектов, международные мероприятия, сертификаты ведущих университетов мира и 1 000 000+ просмотров на YouTube.</p>
+
+  <div class="about-grid fi d3">
+    <div class="about-card">
+      <div class="about-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3>AI и ИИ-автоматизация</h3>
+      <p>Создаём умных агентов на базе GPT, Claude, Gemini и DeepSeek. Интегрируемся с LangChain, RAG-системами и вашей CRM — так бизнес работает без выходных.</p>
+      <div class="tags"><span class="tag">LLM</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Python</span></div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Веб и мобильные приложения</h3>
+      <p>Сайты, которые находят в поиске. Приложения, которыми пользуются. Разрабатываем под ключ: от дизайна до запуска на сервере.</p>
+      <div class="tags"><span class="tag">React</span><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">SEO</span></div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+      </div>
+      <h3>Контент и маркетинг</h3>
+      <p>Системный контент-маркетинг с использованием ИИ: тексты, видео, визуал и публикации. Вы занимаетесь бизнесом — соцсети работают сами.</p>
+      <div class="tags"><span class="tag">SMM</span><span class="tag">AI-контент</span><span class="tag">AEO</span><span class="tag">GEO</span></div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <h3>Event и медиа</h3>
+      <p>50+ конференций и турниров федерального уровня. Крипто Саммит РФ, BlockchainConferenceBaikal, МедиаБиз.рф. Умеем делать события, о которых говорят.</p>
+      <div class="tags"><span class="tag">Конференции</span><span class="tag">Хакатоны</span><span class="tag">Стримы</span></div>
+    </div>
+  </div>
+
+  <div class="certs-row fi d4">
+    <div class="cert">
+      <strong>Vanderbilt University · 2026</strong>
+      <span>AI Agents and Agentic AI with Python</span>
+    </div>
+    <div class="cert">
+      <strong>MongoDB Inc. · 2026</strong>
+      <span>Building AI Agents · Vector Search</span>
+    </div>
+    <div class="cert">
+      <strong>Госуслуги · до 2027</strong>
+      <span>Python, SQL, Docker, ML, API, Linux, Git</span>
+    </div>
+    <div class="cert">
+      <strong>HeadHunter · до 2027</strong>
+      <span>Advanced / Intermediate верификация</span>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 3 — ПРОБЛЕМЫ
+════════════════════════════════════════ -->
+<section class="section" id="s3">
+  <div class="blob" style="width:500px;height:500px;bottom:-150px;left:-100px;background:#e17055;opacity:.05"></div>
+
+  <div class="label fi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    03 / Боли клиентов
+  </div>
+  <h2 class="h2 fi d1">Это <span class="accent">знакомо?</span></h2>
+  <p class="desc fi d2">Большинство предпринимателей сталкиваются с одними и теми же барьерами. Мы знаем, как их убрать.</p>
+
+  <div class="problems-grid fi d3">
+    <div class="prob-card">
+      <div class="prob-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <h3>Нет клиентов из интернета</h3>
+      <ul class="prob-list">
+        <li>Конкуренты в топе поиска — вас не находят</li>
+        <li>Сайт сделали давно, он не вызывает доверия</li>
+        <li>Деньги на рекламу уходят, заявок нет</li>
+        <li>ИИ-сниппеты забирают трафик без перехода на сайт</li>
+      </ul>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Рутина съедает время</h3>
+      <ul class="prob-list">
+        <li>Менеджеры отвечают на одни вопросы каждый день</li>
+        <li>Ночью и в выходные заявки теряются</li>
+        <li>Нанять сотрудника дорого — кадровый дефицит 3–4 млн человек</li>
+        <li>Нет времени на важное — всё уходит в рутину</li>
+      </ul>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Контент не работает</h3>
+      <ul class="prob-list">
+        <li>Соцсети молчат неделями — аудитория забывает</li>
+        <li>Нет идей, копирайтер пишет «ни о чём»</li>
+        <li>Конкуренты публикуют каждый день</li>
+        <li>Один пост — полдня работы, а охват нулевой</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 4 — ОБЗОР РЕШЕНИЙ
+════════════════════════════════════════ -->
+<section class="section section-alt" id="s4">
+  <div class="blob" style="width:450px;height:450px;top:-100px;right:-100px;background:#00cec9"></div>
+
+  <div class="label fi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+    04 / Наши решения
+  </div>
+  <h2 class="h2 fi d1">Три пакета — <span class="accent">три результата</span></h2>
+  <p class="desc fi d2">Выбираете то, что закрывает вашу задачу. Оплачиваете онлайн — начинаем работу в течение 24 часов.</p>
+
+  <div class="overview-grid fi d3">
+    <div class="ov-card" onclick="go(5)">
+      <div class="ov-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Сайт + SEO + Яндекс Директ</h3>
+      <p>Ваш бизнес в интернете за 3–5 дней. Сайт, который находят в поиске, реклама, которая приводит клиентов.</p>
+      <div class="ov-price">25 000 ₽</div>
+    </div>
+    <div class="ov-card" onclick="go(6)">
+      <div class="ov-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M8 12h8M12 8v8"/></svg>
+      </div>
+      <h3>ИИ-боты для Telegram и VK</h3>
+      <p>Автономный агент, который отвечает, продаёт и принимает заявки без выходных и больничных.</p>
+      <div class="ov-price">25 000 ₽</div>
+    </div>
+    <div class="ov-card" onclick="go(7)">
+      <div class="ov-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <h3>Контент-завод</h3>
+      <p>Полный цикл производства контента. ИИ берёт на себя 80% рутины — вы только задаёте смысл.</p>
+      <div class="ov-price">30 000 ₽</div>
+    </div>
+  </div>
+
+  <div class="guarantees fi d4">
+    <div class="guar">
+      <div class="guar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <p><strong>Старт за 24 часа</strong><br>сразу после оплаты</p>
+    </div>
+    <div class="guar">
+      <div class="guar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <p><strong>Альфа-Банк</strong><br>безопасная оплата</p>
+    </div>
+    <div class="guar">
+      <div class="guar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <p><strong>Договор-оферта</strong><br>всё прозрачно</p>
+    </div>
+    <div class="guar">
+      <div class="guar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg></div>
+      <p><strong>Возврат</strong><br>до начала работ</p>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 5 — УСЛУГА 1: САЙТ + SEO + ДИРЕКТ
+════════════════════════════════════════ -->
+<section class="section" id="s5">
+  <div class="blob" style="width:400px;height:400px;top:-100px;right:-50px;background:#6c5ce7"></div>
+
+  <div class="label fi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    05 / Услуга 1 · Хит продаж
+  </div>
+
+  <div class="svc-grid fi d1">
+    <div>
+      <div class="svc-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Сайт + SEO + Директ
+      </div>
+      <h2 class="h2">Ваш бизнес в топе поиска<br><span class="accent">за 3–5 дней</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-top:14px">
+        В 2026 году сайт — это не «страничка-визитка». Это машиночитаемый узел знаний, который ИИ-поисковики (YandexGPT, ChatGPT) цитируют в готовых ответах. Мы строим именно такие сайты.
+      </p>
+      <div class="svc-price">25 000 ₽</div>
+      <div class="svc-price-note">единоразовая оплата · старт за 24 часа</div>
+      <a href="https://pay.alfabank.ru/sc/SizsuTDfNKSXZbVU" target="_blank" class="btn btn-primary" style="margin-top:4px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Оплатить онлайн
+      </a>
+      <div class="bonus" style="display:flex;margin-top:16px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+        Бонус: настройка аналитики Яндекс Метрика
+      </div>
+    </div>
+
+    <div>
+      <div class="pain-box">
+        <div class="box-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Проблема
+        </div>
+        <ul class="check-list">
+          <li>Конкуренты забирают клиентов из поиска, а вас не находят</li>
+          <li>Сайт сделали давно — он выглядит устаревшим, не вызывает доверия</li>
+          <li>Нет времени разбираться в рекламе — деньги сливаются впустую</li>
+        </ul>
+      </div>
+      <div class="sol-box">
+        <div class="box-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Что входит в пакет
+        </div>
+        <ul class="sol-list">
+          <li>Дизайн и вёрстка под вашу аудиторию и бизнес-цели</li>
+          <li>AEO/GEO-оптимизация: попадание в ИИ-ответы Яндекса и ChatGPT</li>
+          <li>Schema.org, JSON-LD, Core Web Vitals — технический фундамент</li>
+          <li>Настройка рекламного кабинета Яндекс Директ с передачей данных CRM</li>
+          <li>Правки до полного утверждения, адаптация под все устройства</li>
+        </ul>
+      </div>
+      <div class="ex-box">
+        <div class="box-title" style="color:var(--cyan)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          Пример — простым языком
+        </div>
+        <p>Вы открыли юридическую контору. Клиент спрашивает у YandexGPT: «Где оформить развод в Чите?» — и в ответе звучит <strong>название вашей фирмы</strong>. Не конкурентов. Вашей. Именно так работает AEO — мы настраиваем это с первого дня.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 6 — УСЛУГА 2: ИИ-БОТЫ
+════════════════════════════════════════ -->
+<section class="section section-alt" id="s6">
+  <div class="blob" style="width:400px;height:400px;bottom:-100px;left:-100px;background:#00cec9"></div>
+
+  <div class="label fi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M8 12h8M12 8v8"/></svg>
+    06 / Услуга 2 · ИИ-автоматизация
+  </div>
+
+  <div class="svc-grid fi d1">
+    <div>
+      <div class="svc-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        Telegram · VK Max
+      </div>
+      <h2 class="h2">Сотрудник, который<br><span class="accent">не спит и не болеет</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-top:14px">
+        В России дефицит 3–4 млн работников. Нанять хорошего менеджера по продажам — дорого и долго. ИИ-агент закрывает эту задачу: отвечает на уровне живого менеджера, анализирует поведение клиента и отправляет персонализированные предложения ещё до того, как тот сформулировал запрос.
+      </p>
+      <div class="svc-price">25 000 ₽</div>
+      <div class="svc-price-note">единоразовая оплата · старт за 24 часа</div>
+      <a href="https://pay.alfabank.ru/sc/XpcWpYSRkdbOzRaE" target="_blank" class="btn btn-primary" style="margin-top:4px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Оплатить онлайн
+      </a>
+      <div class="bonus" style="display:flex;margin-top:16px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+        Бонус: 2 недели бесплатной поддержки после запуска
+      </div>
+    </div>
+
+    <div>
+      <div class="pain-box">
+        <div class="box-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Проблема
+        </div>
+        <ul class="check-list">
+          <li>Менеджеры не успевают отвечать — клиенты уходят к конкурентам</li>
+          <li>Одни и те же вопросы отнимают часы каждый день</li>
+          <li>Ночью и в выходные заявки просто теряются</li>
+          <li>Нанять ещё сотрудника — дорого, а нагрузка растёт</li>
+        </ul>
+      </div>
+      <div class="sol-box">
+        <div class="box-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Что входит в пакет
+        </div>
+        <ul class="sol-list">
+          <li>Разработка ИИ-агента, обученного на ваших товарах и услугах</li>
+          <li>Интеграция с Telegram, VK Max или обе платформы</li>
+          <li>Автоответы, воронки продаж, квалификация лидов</li>
+          <li>Подключение к CRM, уведомления менеджерам о новых заказах</li>
+          <li>Персонализированные предложения на основе истории клиента</li>
+        </ul>
+      </div>
+      <div class="ex-box">
+        <div class="box-title" style="color:var(--cyan)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="16" y2="12"/><line x1="12" y1="8" x2="8" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+          Пример — простым языком
+        </div>
+        <p>Клиент пишет в Telegram в 2 ночи: «Сколько стоит доставка цветов?» Бот мгновенно отвечает, уточняет адрес и случай, предлагает подходящий букет и <strong>принимает заказ без участия менеджера</strong>. Утром вы видите готовую заявку в CRM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 7 — УСЛУГА 3: КОНТЕНТ-ЗАВОД
+════════════════════════════════════════ -->
+<section class="section" id="s7">
+  <div class="blob" style="width:450px;height:450px;top:-50px;right:-120px;background:#6c5ce7"></div>
+
+  <div class="label fi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    07 / Услуга 3 · Контент на потоке
+  </div>
+
+  <div class="svc-grid fi d1">
+    <div>
+      <div class="svc-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Полный цикл производства
+      </div>
+      <h2 class="h2">Контент-<span class="accent">завод</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-top:14px">
+        Держать большую команду ради 2–3 роликов в день — устаревшая модель. В 2026 году ИИ берёт на себя 80% рутины: сценарий, монтаж, звук, текст. За вами — стратегия и смысл. Лучший результат: гибридный подход, где ИИ создаёт ежедневный поток, а вы выходите в эфир 1–2 раза в неделю для эмоциональной связи с аудиторией.
+      </p>
+      <div class="svc-price">30 000 ₽</div>
+      <div class="svc-price-note">в месяц · старт за 24 часа</div>
+      <a href="https://pay.alfabank.ru/sc/WFzcjRbwksoLLikE" target="_blank" class="btn btn-primary" style="margin-top:4px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Оплатить онлайн
+      </a>
+      <div class="bonus" style="display:flex;margin-top:16px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+        Бонус: аудит соцсетей и рекомендации по росту
+      </div>
+    </div>
+
+    <div>
+      <div class="pain-box">
+        <div class="box-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Проблема
+        </div>
+        <ul class="check-list">
+          <li>Соцсети молчат неделями — аудитория забывает о вас</li>
+          <li>Нет идей для контента, а копирайтер пишет «ни о чём»</li>
+          <li>Конкуренты публикуют каждый день и забирают ваших клиентов</li>
+          <li>На создание одного поста уходит полдня — бизнес стоит</li>
+        </ul>
+      </div>
+      <div class="sol-box">
+        <div class="box-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Что входит в пакет
+        </div>
+        <ul class="sol-list">
+          <li>Контент-стратегия: цели, аудитория, форматы, план публикаций</li>
+          <li>Тексты: посты, статьи, сценарии для видео и Reels</li>
+          <li>Визуальный контент: оформление, обложки, карточки</li>
+          <li>Публикация, ведение аккаунтов и взаимодействие с аудиторией</li>
+          <li>Аналитика и корректировка стратегии по результатам каждого месяца</li>
+        </ul>
+      </div>
+      <div class="ex-box">
+        <div class="box-title" style="color:var(--cyan)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="16" y2="12"/><line x1="12" y1="8" x2="8" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+          Пример — простым языком
+        </div>
+        <p>Вы — владелец автосервиса. Каждый день выходит короткое видео от ИИ-персонажа: «Почему стучит двигатель?», «Как понять, что пора менять масло?» Раз в неделю вы сами снимаете разбор реального случая. <strong>Подписчики начинают доверять вам ещё до первого визита</strong> — запись растёт.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 8 — КЕЙСЫ
+════════════════════════════════════════ -->
+<section class="section section-alt" id="s8">
+  <div class="blob" style="width:400px;height:400px;top:0;right:-80px;background:#00b894"></div>
+
+  <div class="label fi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+    08 / Кейсы
+  </div>
+  <h2 class="h2 fi d1">Не слова — <span class="accent">цифры</span></h2>
+  <p class="desc fi d2">Реальные проекты. Реальные результаты.</p>
+
+  <div class="cases-grid fi d3">
+    <div class="case-card">
+      <div class="case-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 8v4l3 3"/></svg>
+        AI и Enterprise
+      </div>
+      <h3>Корпоративный ИИ-ассистент</h3>
+      <p>Компания с 500+ сотрудниками. Загрузили 10 000+ внутренних документов: инструкции, регламенты, договоры. Теперь сотрудник не ищет нужный файл по папкам — просто спрашивает бота и получает точный ответ за секунды.</p>
+      <div class="case-result">
+        <div class="result-num">−70%</div>
+        <div class="result-text">времени на поиск информации внутри компании</div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        AI-автоматизация
+      </div>
+      <h3>Платформа обработки документов</h3>
+      <p>Компания получала сотни входящих документов ежедневно. Менеджеры сортировали вручную — медленно и с ошибками. Мы создали систему, которая сама читает, классифицирует и направляет документы нужному отделу.</p>
+      <div class="case-result">
+        <div class="result-num">−80%</div>
+        <div class="result-text">ручной работы с входящими документами</div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        Конференции и Event
+      </div>
+      <h3>Крипто Саммит РФ</h3>
+      <p>Организовали крупнейший блокчейн-саммит России в Москве. Международные спикеры, сотни участников из разных регионов, медиаохват по всей стране. Полная техническая инфраструктура и онлайн-трансляция под ключ.</p>
+      <div class="case-result">
+        <div class="result-num">50+</div>
+        <div class="result-text">мероприятий федерального и международного уровня</div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        Медиа и YouTube
+      </div>
+      <h3>Медиа-проекты студии</h3>
+      <p>Систематическое производство образовательного контента для IT-сообщества: подкасты, стримы, обучающие видео. Регулярные выпуски, выстроенная воронка — от просмотра до обращения за услугами.</p>
+      <div class="case-result">
+        <div class="result-num">3M+</div>
+        <div class="result-text">суммарных просмотров по всем медиа-проектам</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════════════
+     СЛАЙД 9 — ПОЧЕМУ МЫ + CTA
+════════════════════════════════════════ -->
+<section class="section" id="s9">
+  <div class="blob" style="width:500px;height:500px;bottom:-200px;right:-100px;background:#6c5ce7"></div>
+
+  <div class="label fi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    09 / Почему мы
+  </div>
+  <h2 class="h2 fi d1">Работать с нами — <span class="accent">безопасно</span></h2>
+  <p class="desc fi d2">Понимаем: отдавать деньги незнакомой компании страшно. Поэтому сделали всё, чтобы вам было спокойно на каждом этапе.</p>
+
+  <div class="trust-grid fi d3">
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Старт за 24 часа</h3>
+      <p>Оплатили сегодня — завтра уже работаем над вашим проектом. Никакого «мы свяжемся в течение недели».</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <h3>Безопасная оплата</h3>
+      <p>Платежи через Альфа-Банк — ваши деньги под защитой банковских гарантий. Никаких серых схем.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg>
+      </div>
+      <h3>Возврат до начала работ</h3>
+      <p>Передумали? Если работа ещё не начата — вернём деньги в полном объёме. Без споров и лишних вопросов.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3>Договор-оферта</h3>
+      <p>Публичная оферта с подробными условиями. Чётко: что делаем, в какие сроки, на каких условиях.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <h3>2 недели поддержки</h3>
+      <p>После запуска ИИ-бота мы не исчезаем. Две недели отвечаем на вопросы и правим, если что-то пошло не так.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <h3>Сертифицированные эксперты</h3>
+      <p>Vanderbilt University, MongoDB, Госуслуги, HeadHunter — документальное подтверждение квалификации команды.</p>
+    </div>
+  </div>
+
+  <div class="cta-wrap fi d4">
+    <div class="cta-block">
+      <h2>Готовы начать?</h2>
+      <p>Выберите услугу, оплатите онлайн —<br>и мы приступим к работе уже завтра</p>
+      <div class="cta-btns">
+        <a href="https://t.me/yuliya_PR_marketing" target="_blank" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Написать в Telegram
+        </a>
+        <a href="https://chimitdorzhi.tech/market/" target="_blank" class="btn btn-ghost">
+          Перейти в магазин
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const sections = ['s1','s2','s3','s4','s5','s6','s7','s8','s9'];
+
+function go(n){ document.getElementById('s'+n).scrollIntoView({behavior:'smooth'}) }
+
+// fade in
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('vis') })
+},{threshold:0.1});
+document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+
+// active nav dot
+const io2 = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const idx = sections.indexOf(e.target.id);
+      document.querySelectorAll('.nav-link').forEach((d,i)=>{
+        d.classList.toggle('active', i===idx);
+      });
+    }
+  });
+},{threshold:0.45});
+sections.forEach(id=>{ const el=document.getElementById(id); if(el) io2.observe(el) });
+</script>
+</body>
+</html>
