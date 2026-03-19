@@ -21,6 +21,27 @@
   --muted:   #7b7b9d;
   --border:  rgba(108,92,231,.18);
   --border2: rgba(255,255,255,.06);
+  --nav-bg:  rgba(9,9,15,.82);
+  --shadow-accent: rgba(108,92,231,.18);
+}
+
+[data-theme="light"] {
+  --bg:      #f4f4f8;
+  --bg2:     #eaeaf0;
+  --card:    #ffffff;
+  --card2:   #f0f0f6;
+  --accent:  #5a4bd4;
+  --accent2: #6c5ce7;
+  --cyan:    #00a8a3;
+  --green:   #00966e;
+  --red:     #d35740;
+  --gold:    #d4a840;
+  --text:    #1a1a2e;
+  --muted:   #5e5e7e;
+  --border:  rgba(108,92,231,.15);
+  --border2: rgba(0,0,0,.08);
+  --nav-bg:  rgba(244,244,248,.88);
+  --shadow-accent: rgba(108,92,231,.12);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -29,7 +50,7 @@ body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;ove
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
-  background:rgba(9,9,15,.82);backdrop-filter:blur(16px);
+  background:var(--nav-bg);backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border2);
   padding:0 48px;height:60px;
   display:flex;align-items:center;justify-content:space-between;
@@ -53,6 +74,22 @@ nav{
   transition:all .25s;
 }
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(108,92,231,.4)}
+
+/* ── THEME TOGGLE ── */
+.theme-toggle{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--border2);background:var(--card);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .3s;margin-right:8px;flex-shrink:0;
+}
+.theme-toggle:hover{border-color:var(--accent);transform:scale(1.1)}
+.theme-toggle svg{width:18px;height:18px;color:var(--accent2);transition:transform .3s}
+.theme-toggle:hover svg{transform:rotate(30deg)}
+.theme-toggle .icon-sun{display:none}
+.theme-toggle .icon-moon{display:block}
+[data-theme="light"] .theme-toggle .icon-sun{display:block}
+[data-theme="light"] .theme-toggle .icon-moon{display:none}
+.nav-right{display:flex;align-items:center;gap:10px}
 
 /* ── SECTIONS ── */
 .section{
@@ -101,7 +138,7 @@ nav{
 .hero-photo img{
   width:100%;max-width:480px;border-radius:24px;
   border:2px solid var(--border);
-  box-shadow:0 32px 80px rgba(108,92,231,.18);
+  box-shadow:0 32px 80px var(--shadow-accent);
   object-fit:cover;
 }
 .hero-eyebrow{
@@ -443,7 +480,13 @@ nav{
     <button class="nav-link" onclick="go(8)">8</button>
     <button class="nav-link" onclick="go(9)">9</button>
   </div>
-  <a href="https://t.me/yuliya_PR_marketing" target="_blank" class="nav-cta">Связаться</a>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="https://t.me/yuliya_PR_marketing" target="_blank" class="nav-cta">Связаться</a>
+  </div>
 </nav>
 
 <!-- ════════════════════════════════════════
@@ -1071,6 +1114,19 @@ const io2 = new IntersectionObserver(entries=>{
   });
 },{threshold:0.45});
 sections.forEach(id=>{ const el=document.getElementById(id); if(el) io2.observe(el) });
+
+// theme toggle
+function toggleTheme(){
+  const html = document.documentElement;
+  const next = html.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next==='dark'?'':'light');
+  localStorage.setItem('theme', next);
+}
+// restore saved theme
+(function(){
+  const saved = localStorage.getItem('theme');
+  if(saved==='light') document.documentElement.setAttribute('data-theme','light');
+})();
 </script>
 </body>
 </html>
